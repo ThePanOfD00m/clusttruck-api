@@ -9,10 +9,13 @@ The Cluster Truck API allows you to use all of the great ClusterTruck data for y
 All of the API's URIs are broken into three parts: the method, the path and the query parameters. Below is an example URI, broken into section
 
 {{{
-http://api.clustertruck.com/v1/truck/kogi/info?key=KEY&sig=SIG 
-                           | method | path    | query         |
+http://api.clustertruck.com/v1/truck/kogi/info?key1=val1&key2=val2
+                           | method |   path  |    query      |
 }}}
 
+   * *Method* A combination of the version & request method. Always Required.
+   * *Path* Path information is required information for each method. Note that some methods will use default path values if no path is provided
+   * *Query* Query Parameters are optional information that in some way modify the method
 
 == Global Parameters ==
 
