@@ -152,11 +152,7 @@ Return:
 
 }}}
 
-</blockquote>
-
 == List of Trucks ==
-
-<blockquote>
 
 === GET ===
 
@@ -261,19 +257,12 @@ Response:
 </result>
 }}}
 
-</blockquote>
-
 == Locations ==
-
-<blockquote>
 
 === GET ===
 
-</blockquote>
 
 == Neighborhoods ==
-
-<blockquote>
 
 === GET ===
 
