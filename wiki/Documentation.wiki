@@ -3,7 +3,7 @@
 <wiki:toc max_depth="2" />
 
 = Overview =
-The Cluster Truck API allows you to use all of the great ClusterTruck data for you application. Our API (attempts to) follow the [REST http://en.wikipedia.org/wiki/Representational_State_Transfer] protocol.
+The Cluster Truck API allows you to use all of the great Cluster Truck data for you application. Our API (attempts to) follow the [REST http://en.wikipedia.org/wiki/Representational_State_Transfer] protocol.
 
 == URI Structure ==
 All of the API's URIs are broken into three parts: the method, the path and the query parameters. Below is an example URI, broken into section
@@ -17,12 +17,19 @@ http://api.clustertruck.com/v1/truck/kogi/info?key1=val1&key2=val2
    * *Path* Path information is required information for each method. Note that some methods will use default path values if no path is provided
    * *Query* Query Parameters are optional information that in some way modify the method
 
-== Global Parameters ==
-
 == Authentication ==
+To make requests to the Cluster Truck API, you must provide authentication information for your application. If you're make requests on behalf of a User, you must also provide that user's authentication information.
 
+=== Application Authentication ===
+
+=== User Authentication ===
+Since we don't have any user methods, we don't need to worry about authenticating them.
 
 == Response Formats==
+Our API supports three response formats: JSON, Serialize PHP & XML (default). You can specify the desired response format in one of two ways
+
+   * HTTP Header: `Accept`
+   * Query Parameter: `format={json,php,xml}`
 
 = Methods =
 
