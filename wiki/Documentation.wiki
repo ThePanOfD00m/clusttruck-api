@@ -16,7 +16,7 @@
 
 === GET ===
 
-   * URL: /v1/truck/{slug|id}/{view}
+   * URL: `/v1/truck/{slug|id}/{view}`
    * Request Method: GET
    * User Authentication: No
 
@@ -29,7 +29,7 @@
       * *location* - current & future truck locations
 
 ==== Examples ====
-URL: http://api.clustertruck.com/v1/truck/fressers
+URL: http://api.clustertruck.com/v1/truck/fressers <BR>
 Return:
 {{{
 <?xml version="1.0" encoding="utf-8"?>
@@ -72,7 +72,7 @@ Return:
 </result>
 }}}
 
-URL: http://api.clustertruck.com/v1/truck/fressers/info
+URL: http://api.clustertruck.com/v1/truck/fressers/info <BR>
 Return: 
 {{{
 <?xml version="1.0" encoding="utf-8"?>
