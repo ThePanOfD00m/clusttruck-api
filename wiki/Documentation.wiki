@@ -107,8 +107,101 @@ Return:
 
 ==== Parameters ====   
    * *name* Search trucks based on provided "name" Will perform an exact, case-insensitive, match on truck titles. Use '`*`' for wild card searches. _ex: `k*`_ _required: no_
-   * *page* Page to start on _default: 1_ _required: no_
-   * *per* Results per page _default: 20_ _max: 20_ _required: no_
+   * *page* Page to start on _default: 1_ | _required: no_
+   * *per* Results per page _default: 20_ | _max: 20_ | _required: no_
+
+==== Examples ====
+URL: http://api.clustertruck.com/v1/trucks/ <BR>
+Response:
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<result status="1">
+  <trucks total="62" pages="4">
+    <truck id="1" slug="kogi">
+      <name>Kogi BBQ</name>
+      <description><![CDATA[Known for it&#039;s fusion of Korean and Mexican food, Kogi is the granddaddy of them all, often credited for starting the Twitter food truck phenomenon.]]></description>
+      <location id="5">
+        <name>Sunset Blvd &amp;amp; Micheltorena, Los Angeles, CA</name>
+        <lat>34.087570000000</lat>
+        <long>-118.275869000000</long>
+        <start>1263672000</start>
+        <stop>1263682800</stop>
+      </location>
+    </truck>
+    <truck id="2" slug="barbiesq">
+      <name>Barbie&amp;#039;s Q</name>
+      <description><![CDATA[A rollin&#039; BBQ joint, complete with blues music, pork, beef, and cheesy grits.]]></description>
+      <location id="9">
+        <name>2700 Pennsylvania, Santa Monica, CA</name>
+        <lat>34.030289000000</lat>
+        <long>-118.469145000000</long>
+        <start>1263927600</start>
+        <stop>1263942000</stop>
+      </location>
+    </truck>
+    <truck id="3" slug="grilledcheese">
+      <name>Grilled Cheese Truck</name>
+      <description><![CDATA[Chef driven grilled cheese... &#039;cause that&#039;s how we roll.]]></description>
+      <location id="2">
+        <name>900 Exposition, Los Angeles, CA</name>
+        <lat>34.018067000000</lat>
+        <long>-118.289137000000</long>
+        <start>1263672000</start>
+        <stop>1263682800</stop>
+      </location>
+    </truck>
+  </trucks>
+</result>
+}}}
+
+URL: http://api.clustertruck.com/v1/trucks/?name=k*&page=1&per=5
+Response:
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<result status="1">
+  <trucks total="4" pages="1">
+    <truck id="1" slug="kogi">
+      <name>Kogi BBQ</name>
+      <description><![CDATA[Known for it&#039;s fusion of Korean and Mexican food, Kogi is the granddaddy of them all, often credited for starting the Twitter food truck phenomenon.]]></description>
+      <location id="5">
+        <name>Sunset Blvd &amp;amp; Micheltorena, Los Angeles, CA</name>
+        <lat>34.087570000000</lat>
+        <long>-118.275869000000</long>
+        <start>1263672000</start>
+        <stop>1263682800</stop>
+      </location>
+    </truck>
+    <truck id="9" slug="komodo">
+      <name>Komodo Food</name>
+      <description><![CDATA[Not your average taco truck... Brace yourself for a unique flavor adventure.]]></description>
+      <location id="53">
+        <name>5700 Wilshire, Los Angeles, CA</name>
+        <lat>34.062298000000</lat>
+        <long>-118.352700000000</long>
+        <start>1264014000</start>
+        <stop>1264024800</stop>
+      </location>
+    </truck>
+    <truck id="45" slug="king-kone">
+      <name>King Kone</name>
+      <description><![CDATA[King Kone is a mobile ice parlor providing treats out of a sweet butter yellow truck.]]></description>
+      <location id="11">
+        <name>6201 Winnetka Ave Woodland Hills, CA 91371</name>
+        <lat>34.185373000000</lat>
+        <long>-118.571004000000</long>
+        <start>1263841200</start>
+        <stop>1263859200</stop>
+      </location>
+    </truck>
+    <truck id="62" slug="kabob-n-roll">
+      <name>Kabob N&amp;#039; Roll</name>
+      <description><![CDATA[Fresh, Healthy, Authentic, Delicious, Mediterranean Cuisine]]></description>
+      <location></location>
+    </truck>
+  </trucks>
+</result>
+}}}
+
 
 == Locations ==
 
