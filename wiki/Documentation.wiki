@@ -21,17 +21,12 @@
    * User Authentication: No
 
 ==== Parameters ==== 
-
-*Path*
    * *slug* Truck Slug. _ex: kogi_
    * *id* Id of Truck _ex: 1_
    * *view* Comma separated list of truck information to return _ex: info,menu_
       * *info* - general truck information
       * *menu* - truck menu
       * *location* - current & future truck locations
-
-*Query*
-none
 
 ==== Examples ====
 URL: http://api.clustertruck.com/v1/truck/fressers <BR>
@@ -108,19 +103,14 @@ Return:
 
 === GET ===
 
-   * URL: `/v1/trucks`
+   * URL: `/v1/trucks?name={name}&page={page}&per={per}`
    * Request Method: GET
    * User Authentication: No
 
 ==== Parameters ====   
-
-*Path*
-none
-
-*Query*
-   * *name* Search trucks based on provided "name" Will perform an exact, case-insensitive, match on truck titles. Use '*' for wild card searches. _ex: k*_
-   * *page* Page to start on _default: 1_
-   * *per* Results per page _default: 20_ _max: 20_
+   * *name* Search trucks based on provided "name" Will perform an exact, case-insensitive, match on truck titles. Use '*' for wild card searches. _ex: k*_ _required: no_
+   * *page* Page to start on _default: 1_ _required: no_
+   * *per* Results per page _default: 20_ _max: 20_ _required: no_
 
 == Locations ==
 
