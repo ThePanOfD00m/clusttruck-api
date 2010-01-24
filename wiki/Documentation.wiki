@@ -11,7 +11,7 @@ The Cluster Truck API allows you to use all of the great Cluster Truck data for 
 All of the API's URIs are broken into three parts: the method, the path and the query parameters. Below is an example URI, broken into section
 
 {{{
-http://api.clustertruck.com/v1/truck/kogi/info?key1=val1&key2=val2
+http://api.clustertruck.org/v1/truck/kogi/info?key1=val1&key2=val2
                              |method|   path  |      query       |
 }}}
 
@@ -48,7 +48,7 @@ To generate a request signature, provide an MD5 Hash of the following informatio
  $secret = "xxx";
  $method = "truck";
  $http = "GET";
- $url = "http://api.clustertruck.com/v1/truck/fressers";
+ $url = "http://api.clustertruck.org/v1/truck/fressers";
  $sig = md5("{$secret}{$method}{$http}{$url}");
 }}}
 
@@ -84,7 +84,7 @@ Our API supports three response formats: JSON, Serialize PHP & XML (default). Yo
       * *location* - current & future truck locations
 
 ==== Examples ====
-URL: http://api.clustertruck.com/v1/truck/fressers <BR>
+URL: http://api.clustertruck.org/v1/truck/fressers <BR>
 Return:
 {{{
 <?xml version="1.0" encoding="utf-8"?>
@@ -127,7 +127,7 @@ Return:
 </result>
 }}}
 
-URL: http://api.clustertruck.com/v1/truck/fressers/info <BR>
+URL: http://api.clustertruck.org/v1/truck/fressers/info <BR>
 Return: 
 {{{
 <?xml version="1.0" encoding="utf-8"?>
@@ -170,7 +170,7 @@ Return:
    * *per* Results per page _default: 20_ | _max: 20_ | _required: no_
 
 ==== Examples ====
-URL: http://api.clustertruck.com/v1/trucks/ <BR>
+URL: http://api.clustertruck.org/v1/trucks/ <BR>
 Response:
 {{{
 <?xml version="1.0" encoding="utf-8"?>
@@ -213,7 +213,7 @@ Response:
 </result>
 }}}
 
-URL: http://api.clustertruck.com/v1/trucks/?name=k*&page=1&per=5
+URL: http://api.clustertruck.org/v1/trucks/?name=k*&page=1&per=5
 Response:
 {{{
 <?xml version="1.0" encoding="utf-8"?>
