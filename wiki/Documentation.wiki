@@ -18,15 +18,15 @@
 
    * URL: /v1/truck/{slug|id}/{view}
    * Request Method: GET
-   * User Authentication: no
+   * User Authentication: No
 
 ==== Params ==== 
-   * *slug* Truck Slug. ex: kogi
-   * *id* Id of Truck
-   * *view* Comma separated list of truck information to return
-      * info - general truck information
-      * menu - truck menu
-      * location - current & future truck locations
+   * *slug* Truck Slug. _ex: kogi_
+   * *id* Id of Truck _ex: 1_
+   * *view* Comma separated list of truck information to return _ex: info,menu_
+      * *info* - general truck information
+      * *menu* - truck menu
+      * *location* - current & future truck locations
 
 ==== Examples ====
 URL: http://api.clustertruck.com/v1/truck/fressers
