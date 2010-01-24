@@ -3,12 +3,23 @@
 <wiki:toc max_depth="2" />
 
 = Overview =
+The Cluster Truck API allows you to use all of the great ClusterTruck data for you application. Our API (attempts to) follow the [REST http://en.wikipedia.org/wiki/Representational_State_Transfer] protocol.
 
-= URL Structure =
+== URI Structure ==
+All of the API's URIs are broken into three parts: the method, the path and the query parameters. Below is an example URI, broken into section
 
-= Authentication = 
+{{{
+http://api.clustertruck.com/v1/truck/kogi/info?key=KEY&sig=SIG 
+                           | method | path    | query         |
+}}}
 
-= Global Parameters = 
+
+== Global Parameters ==
+
+== Authentication ==
+
+
+== Response Formats==
 
 = Methods =
 
