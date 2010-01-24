@@ -10,10 +10,10 @@ All of the API's URIs are broken into three parts: the method, the path and the 
 
 {{{
 http://api.clustertruck.com/v1/truck/kogi/info?key1=val1&key2=val2
-                           | method |   path  |    query      |
+                             |method|   path  |      query       |
 }}}
 
-   * *Method* A combination of the version & request method. Always Required.
+   * *Method* The Method you are requesting. Always required.
    * *Path* Path information is required information for each method. Note that some methods will use default path values if no path is provided
    * *Query* Query Parameters are optional information that in some way modify the method
 
@@ -21,6 +21,34 @@ http://api.clustertruck.com/v1/truck/kogi/info?key1=val1&key2=val2
 To make requests to the Cluster Truck API, you must provide authentication information for your application. If you're make requests on behalf of a User, you must also provide that user's authentication information.
 
 === Application Authentication ===
+To authenticate your application, you must provide two pieces of information:
+
+   # *API Key*
+      * HTTP Header: `x-clustertruck-key`
+      * Query Parameter: `key={key}`
+   # *Request Signature*
+      * HTTP Header: `x-clustertruck-sig`
+      * Query Parameter: `sig={sig}`     
+
+*Generating a Signature*
+To generate a request signature, provide an MD5 Hash of the following information:
+{{{
+{api_secret}{method}{http_method}{request_url}
+}}}
+
+   * *api_secret* Your applications API Secret
+   * *method* API Method you would like to make _ex: truck_
+   * *http_method* HTTP Method of the request _ex: GET_
+   * *request_url* Full URL of the request (without a `sig` parameter)
+
+*PHP Example*
+{{{
+ $secret = "xxx";
+ $method = "truck";
+ $http = "GET";
+ $url = "http://api.clustertruck.com/v1/truck/fressers";
+ $sig = md5("{$secret}{$method}{$http}{$url}");
+}}}
 
 === User Authentication ===
 Since we don't have any user methods, we don't need to worry about authenticating them.
@@ -38,7 +66,7 @@ Our API supports three response formats: JSON, Serialize PHP & XML (default). Yo
 === GET ===
 
    * URL: `/v1/truck/{slug|id}/{view}`
-   * Request Method: GET
+   * HTTP Method: GET
    * User Authentication: No
 
 ==== Parameters ==== 
@@ -123,7 +151,7 @@ Return:
 === GET ===
 
    * URL: `/v1/trucks?name={name}&page={page}&per={per}`
-   * Request Method: GET
+   * HTTP Method: GET
    * User Authentication: No
 
 ==== Parameters ====   
