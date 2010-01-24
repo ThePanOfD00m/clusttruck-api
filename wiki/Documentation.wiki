@@ -8,11 +8,94 @@
 
 = Authentication = 
 
+= Global Parameters = 
+
 = Methods =
 
 == Truck Information ==
 
 === GET ===
+
+   * URL: /v1/truck/{slug|id}/{view}
+   * Request Method: GET
+   * User Authentication: no
+
+==== Params ==== 
+   * *slug* Truck Slug. ex: kogi
+   * *id* Id of Truck
+   * *view* Comma separated list of truck information to return
+      * info - general truck information
+      * menu - truck menu
+      * location - current & future truck locations
+
+==== Examples ====
+URL: http://api.clustertruck.com/v1/truck/fressers
+Return:
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<result status="1">
+  <truck id="4" slug="fressers">
+    <info>
+      <name>Fressers Pastrami</name>
+      <description><![CDATA[Food truck offering fresh hot pastrami and other deli favorites throughout the Los Angeles area.]]></description>
+      <website>http://www.fressers.com/</website>
+      <images>
+        <feature>
+          <url>http://cdn.bitsybox.com/98b3b76531ac8d70ca7f5414716ac691.jpg</url>
+          <attribution>http://fressers.wordpress.com/</attribution>
+        </feature>
+        <twitter>
+          <url>http://a1.twimg.com/profile_images/520787342/fressertweet2_normal.jpg</url>
+        </twitter>
+      </images>
+    </info>
+    <menu count="4">
+      <item id="4b4d839e121c8">
+        <name>Turkey Sandwich</name>
+        <description><![CDATA[home roasted turkey, swiss cheese, leafed lettuce, fresh tomatoe, cranberry sauce, mayonaise]]></description>
+        <image>
+          <url>http://cdn.bitsybox.com/084642810f89478da18d09475b78a821.jpg</url>
+        </image>
+        <price>0.00</price>
+      </item>
+      <item id="4b4d83b49088f">
+        <name>Hot Pastrami Sandwich</name>
+        <description><![CDATA[hand sliced hot pastrami, Beaver Brand mustard, rye bread ]]></description>
+        <image>
+          <url>http://cdn.bitsybox.com/611a539fbb2042abff6f5b2b6b4ff61f.jpg</url>
+        </image>
+        <price>0.00</price>
+      </item>
+    </menu>
+    <locations count="0"/>
+  </truck>
+</result>
+}}}
+
+URL: http://api.clustertruck.com/v1/truck/fressers/info
+Return: 
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<result status="1">
+  <truck id="4" slug="fressers">
+    <info>
+      <name>Fressers Pastrami</name>
+      <description><![CDATA[Food truck offering fresh hot pastrami and other deli favorites throughout the Los Angeles area.]]></description>
+      <website>http://www.fressers.com/</website>
+      <images>
+        <feature>
+          <url>http://cdn.bitsybox.com/98b3b76531ac8d70ca7f5414716ac691.jpg</url>
+          <attribution>http://fressers.wordpress.com/</attribution>
+        </feature>
+        <twitter>
+          <url>http://a1.twimg.com/profile_images/520787342/fressertweet2_normal.jpg</url>
+        </twitter>
+      </images>
+    </info>
+  </truck>
+</result>
+
+}}}
 
 == List of Trucks ==
 
@@ -25,3 +108,5 @@
 == Neighborhoods ==
 
 === GET ===
+
+= Error Codes =
