@@ -379,6 +379,41 @@ Response:
    * User Authentication: No
 
 ==== Parameters ==== 
+   * *id* Neighborhood Id 
+   * *slug* Neighborhood Slug
+   * *start* Show only trucks that will be at the location after this time _format: unix timestamp_ | _required: no_
+   * *stop* Show only trucks that will be at the location until this time _format: unix timestamp_ | _required: no_
+
+==== Example ====
+URL: http://api.clustertruck.org/v1/neighborhood/westwood
+Response:
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<result status="1">
+  <neighborhood id="5" slug="westwood">
+    <name>Westwood</name>
+    <center>
+      <lat>34.056068000000</lat>
+      <long>-118.432403000000</long>
+    </center>
+    <locations count="1">
+      <location id="b20405a4cafeba1aeb716c425201cbbb">
+        <address>UCLA, Los Angeles, CA</address>
+        <lat>34.064430000000</lat>
+        <long>-118.444618000000</long>
+        <trucks count="1">
+          <truck id="54" slug="nom-nom-truck">
+            <name>Nom Nom</name>
+            <description><![CDATA[Banh Mi Food Truck ]]></description>
+            <start timestamp="1264532400">2010-01-26T11:00:00-08:00</start>
+            <end timestamp="1264546800">2010-01-26T15:00:00-08:00</end>
+          </truck>
+        </trucks>
+      </location>
+    </locations>
+  </neighborhood>
+</result>
+}}}
 
 == List of Neighborhoods (neighborhoods) ==
 
