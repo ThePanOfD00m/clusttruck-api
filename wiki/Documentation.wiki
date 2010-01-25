@@ -58,8 +58,8 @@ Since we don't have any user methods, we don't need to worry about authenticatin
 == Response Formats==
 Our API supports three response formats: JSON, Serialize PHP & XML (default). You can specify the desired response format in one of two ways
 
-   * HTTP Header: `Accept`
-   * Query Parameter: `format={json,php,xml}`
+   * HTTP Header: `Accept: {text/javascript|application/php|application/xml}`
+   * Query Parameter: `format={json|php|xml}`
 
 </blockquote>
 
