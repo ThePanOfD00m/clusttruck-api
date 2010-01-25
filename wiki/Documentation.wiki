@@ -65,7 +65,7 @@ Our API supports three response formats: JSON, Serialize PHP & XML (default). Yo
 
 = Methods =
 
-== Truck Information ==
+== Truck Information (truck) ==
 
 <blockquote>
 
@@ -152,7 +152,7 @@ Return:
 
 }}}
 
-== List of Trucks ==
+== List of Trucks (trucks) ==
 
 === GET ===
 
@@ -257,7 +257,7 @@ Response:
 </result>
 }}}
 
-== Location ==
+== Location (location) ==
 
 === GET ===
 
@@ -293,7 +293,7 @@ Response:
 </result>
 }}}
 
-== List of Locations ==
+== List of Locations (locations) ==
 
 === GET ===
 
@@ -370,10 +370,26 @@ Response:
 </result>
 }}}
 
-== Neighborhoods ==
+== Neighborhood (neighborhood) ==
 
 === GET ===
 
-</blockquote>
+   * URL: `/v1/neighborhood/{id|slug}`
+   * HTTP Method: GET
+   * User Authentication: No
+
+==== Parameters ==== 
+
+== List of Neighborhoods (neighborhoods) ==
+
+=== GET ===
+
+   * URL: `/v1/locations?lat={lat}&long={long}&distance={distance}&start={start}&stop={stop}&page={page}&per={per}`
+   * HTTP Method: GET
+   * User Authentication: No
+
+==== Parameters ==== 
+
+=== GET ===
 
 = Error Codes =
