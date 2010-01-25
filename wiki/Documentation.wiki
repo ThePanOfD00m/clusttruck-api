@@ -261,6 +261,19 @@ Response:
 
 === GET ===
 
+   * URL: `/v1/locations?lat={lat}&long={long}&distance={distance}&start={start}&stop={stop}&page={page}&per={per}`
+   * HTTP Method: GET
+   * User Authentication: No
+
+==== Parameters ====  
+   * *lat* Center latitude of location | _required: no_
+   * *long* Center Longitude of the location | _required: no_
+   * *distance* Distance from the center lat/long to search. _lat & long are required_ | _required: no_
+   * *start* Show only trucks that will be at the location after this time _format: unix timestamp_ | _required: no_
+   * *stop* Show only trucks that will be at the location until this time _format: unix timestamp_ | _required: no_
+   * *page* Page to start on _default: 1_ | _required: no_
+   * *per* Results per page _default: 20_ | _max: 20_ | _required: no_
+
 
 == Neighborhoods ==
 
