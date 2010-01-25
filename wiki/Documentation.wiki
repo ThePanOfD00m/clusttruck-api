@@ -274,6 +274,65 @@ Response:
    * *page* Page to start on _default: 1_ | _required: no_
    * *per* Results per page _default: 20_ | _max: 20_ | _required: no_
 
+==== Examples ====
+URL: http://api.clustertruck.org/v1/locations <BR>
+Response: 
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<result status="1">
+  <locations total="2" pages="1">
+    <location>
+      <address>203 Center Street Promenade, Anaheim, CA 92805</address>
+      <lat>33.833970000000</lat>
+      <long>-117.915620000000</long>
+      <trucks count="1">
+        <truck id="42" slug="crepes-bonaparte">
+          <name>Crepes Bonaparte</name>
+          <description><![CDATA[French Crepe Catering + Crepe Truck]]></description>
+          <start timestamp="1267128000">2010-02-25T12:00:00-08:00</start>
+          <end timestamp="1267153200">2010-02-25T19:00:00-08:00</end>
+        </truck>
+      </trucks>
+    </location>
+    <location>
+      <address>6041 Variel Ave, Woodland Hills, CA</address>
+      <lat>34.180204000000</lat>
+      <long>-118.592951000000</long>
+      <trucks count="1">
+        <truck id="54" slug="nom-nom-truck">
+          <name>Nom Nom</name>
+          <description><![CDATA[Banh Mi Food Truck ]]></description>
+          <start timestamp="1265050800">2010-02-01T11:00:00-08:00</start>
+          <end timestamp="1265061600">2010-02-01T14:00:00-08:00</end>
+        </truck>
+      </trucks>
+    </location>
+  </locations>
+</result>
+}}}
+
+URL: http://api.clustertruck.org/v1/locations?lat=33.833970000000&long=-117.915620000000
+Response: 
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<result status="1">
+  <locations total="1" pages="1">
+    <location>
+      <address>203 Center Street Promenade, Anaheim, CA 92805</address>
+      <lat>33.833970000000</lat>
+      <long>-117.915620000000</long>
+      <trucks count="1">
+        <truck id="42" slug="crepes-bonaparte">
+          <name>Crepes Bonaparte</name>
+          <description><![CDATA[French Crepe Catering + Crepe Truck]]></description>
+          <start timestamp="1267128000">2010-02-25T12:00:00-08:00</start>
+          <end timestamp="1267153200">2010-02-25T19:00:00-08:00</end>
+        </truck>
+      </trucks>
+    </location>
+  </locations>
+</result>
+}}}
 
 == Neighborhoods ==
 
