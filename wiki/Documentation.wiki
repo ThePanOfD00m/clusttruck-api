@@ -257,7 +257,43 @@ Response:
 </result>
 }}}
 
-== Locations ==
+== Location ==
+
+=== GET ===
+
+   * URL: `/v1/location/{location_id|lat_long}?start={start}&stop={stop}`
+   * HTTP Method: GET
+   * User Authentication: No
+
+==== Parameters ====  
+   * *location_id* Unique Id for a given location. `md5($lat$long)`
+   * *lat_long* Latitude and Longitude of location, separated by a comma. _ex: 33.833970000000,-117.915620000000_
+   * *start* Show only trucks that will be at the location after this time _format: unix timestamp_ | _required: no_
+   * *stop* Show only trucks that will be at the location until this time _format: unix timestamp_ | _required: no_
+
+==== Example ====
+URL: http://api.clustertruck.org/v1/location/33.833970000000,-117.915620000000
+Response: 
+{{{
+<?xml version="1.0" encoding="utf-8"?>
+<result status="1">
+  <location id="157e366fb2bb7c9cbdda5a71a1846430">
+    <address>203 Center Street Promenade, Anaheim, CA 92805</address>
+    <lat>33.833970000000</lat>
+    <long>-117.915620000000</long>
+    <trucks count="1">
+      <truck id="42" slug="crepes-bonaparte">
+        <name>Crepes Bonaparte</name>
+        <description><![CDATA[French Crepe Catering + Crepe Truck]]></description>
+        <start timestamp="1267128000">2010-02-25T12:00:00-08:00</start>
+        <end timestamp="1267153200">2010-02-25T19:00:00-08:00</end>
+      </truck>
+    </trucks>
+  </location>
+</result>
+}}}
+
+== List of Locations ==
 
 === GET ===
 
