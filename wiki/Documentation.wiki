@@ -401,14 +401,6 @@ Response:
         <address>UCLA, Los Angeles, CA</address>
         <lat>34.064430000000</lat>
         <long>-118.444618000000</long>
-        <trucks count="1">
-          <truck id="54" slug="nom-nom-truck">
-            <name>Nom Nom</name>
-            <description><![CDATA[Banh Mi Food Truck ]]></description>
-            <start timestamp="1264532400">2010-01-26T11:00:00-08:00</start>
-            <end timestamp="1264546800">2010-01-26T15:00:00-08:00</end>
-          </truck>
-        </trucks>
       </location>
     </locations>
   </neighborhood>
