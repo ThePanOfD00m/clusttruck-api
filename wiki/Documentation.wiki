@@ -3,7 +3,7 @@
 <wiki:toc max_depth="2" />
 
 = Overview =
-The Cluster Truck API allows you to use all of the great Cluster Truck data for you application. Our API (attempts to) follow the [REST http://en.wikipedia.org/wiki/Representational_State_Transfer] protocol.
+The Cluster Truck API allows you to use all of the great Cluster Truck data for you application. Our API (attempts to) follow the [http://en.wikipedia.org/wiki/Representational_State_Transfer REST] protocol.
 
 <blockquote>
 
