@@ -2,5 +2,43 @@
 To install, [http://code.google.com/p/clusttruck-api/downloads/list download] the lastest version and add it to your PHP source code.
 
 == Using == 
+To use the client, first include the client file:
+{{{
+include("path/to/the/ClusterTruck.php");
+}}}
+
+Next instantiate the ClusterTruck class:
+{{{
+$ct = new ClusterTruck("<API_KEY>","<API_SECRET>");
+}}}
+
+Then start making calls to the API:
+{{{
+$trucks = $ct->get_trucks();
+}}}
+
+=== Requests === 
+To make API calls, use the following syntax with the ClusterTruck class:
+{{{
+ $ct->{http_method}_{method}({path},{query})
+}}}
+
+   * *http_method* HTTP request method _ex: GET_
+   * *method* API Method _ex: trucks_
+   * *path* API request path (optional)
+   * *query* Hash of query parameters (optional)
+ 
+=== Response ===
+After making calls, you'll get back a ClusterTruckResponse object. To retrieve data from the object, request the root node name of the API response. So if I've requested a list of trucks, the root node is "trucks". To get the response:
+{{{
+ $trucks = $ct->get_trucks()->trucks;
+}}}
+
+For list calls (like trucks, locations, etc) you can also get the total and pages attributes:
+{{{
+ $trucks = $ct->get_trucks();
+ $trucks->pages; // total number of list pages (total/per)
+ $trucks->total; // total number of items in the list
+}}}
 
 == Examples ==
