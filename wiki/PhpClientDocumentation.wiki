@@ -91,3 +91,7 @@ $ct = new ClusterTruck($key,$secret,$options);
  echo $trucks->pages;
 
 }}}
+
+= Changelog =
+   * v1.0.1
+      * updated to correct signature method
