@@ -33,6 +33,7 @@ After making calls, you'll get back a ClusterTruckResponse object. To retrieve d
 {{{
  $trucks = $ct->get_trucks()->trucks;
 }}}
+This will provide a PHP array of the API Response.
 
 For list calls (like trucks, locations, etc) you can also get the total and pages attributes:
 {{{
@@ -42,3 +43,46 @@ For list calls (like trucks, locations, etc) you can also get the total and page
 }}}
 
 == Examples ==
+All examples assume:
+{{{
+
+// include ClusterTruck.php client
+include("/path/to/ClusterTruck.php");
+
+// our api information
+$key = "<API_KEY>";
+$secret = "<API_SECRET>";
+$options = array( 'debug' => true);
+
+// create our object
+$ct = new ClusterTruck($key,$secret,$options);
+
+}}}
+
+=== Request a list of trucks ===
+{{{
+ 
+ // list of trucks
+ $trucks = $ct->get_trucks();
+
+ // dump the response
+ print_r($trucks->trucks);
+
+ // print number of pages
+ echo $trucks->pages;
+
+}}}
+
+=== Request a list of trucks that start with 'k' ===
+{{{
+ 
+ // list of trucks
+ $trucks = $ct->get_trucks(false,array('name'=>'k*'));
+
+ // dump the response
+ print_r($trucks->trucks);
+
+ // print number of pages
+ echo $trucks->pages;
+
+}}}
