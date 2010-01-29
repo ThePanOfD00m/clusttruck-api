@@ -93,5 +93,5 @@ $ct = new ClusterTruck($key,$secret,$options);
 }}}
 
 = Changelog =
-   * v1.0.1
+   * v1.0.1 [http://clusttruck-api.googlecode.com/files/ClusterTruck-1.0.1.zip download]
       * updated to correct signature method
