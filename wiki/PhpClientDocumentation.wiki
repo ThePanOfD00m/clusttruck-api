@@ -1,5 +1,5 @@
 == Installing ==
-To install, [download http://code.google.com/p/clusttruck-api/downloads/list] the lastest version and add it to your PHP source code.
+To install, [http://code.google.com/p/clusttruck-api/downloads/list download] the lastest version and add it to your PHP source code.
 
 == Using == 
 
