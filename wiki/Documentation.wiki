@@ -41,14 +41,14 @@ To generate a request signature, provide an MD5 Hash of the following informatio
    * *api_secret* Your applications API Secret
    * *method* API Method you would like to make _ex: truck_
    * *http_method* HTTP Method of the request _ex: GET_
-   * *request_url* Full URL of the request (without a `sig` parameter)
+   * *request_url* Full URL of the request including parameters (without a `sig` parameter)
 
 *PHP Example*
 {{{
  $secret = "xxx";
  $method = "truck";
  $http = "GET";
- $url = "http://api.clustertruck.org/v1/truck/fressers";
+ $url = "http://api.clustertruck.org/v1/truck/fressers?key=[your api key]";
  $sig = md5("{$secret}{$method}{$http}{$url}");
 }}}
 
