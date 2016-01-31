@@ -1,0 +1,95 @@
+
+
+
+# Installing #
+To install, [download](http://code.google.com/p/clusttruck-api/downloads/list) the lastest version and add it to your PHP source code.
+
+# Using #
+To use the client, first include the client file:
+```
+include("path/to/the/ClusterTruck.php");
+```
+
+Next instantiate the ClusterTruck class:
+```
+$ct = new ClusterTruck("<API_KEY>","<API_SECRET>");
+```
+
+Then start making calls to the API:
+```
+$trucks = $ct->get_trucks();
+```
+
+## Requests ##
+To make API calls, use the following syntax with the ClusterTruck class:
+```
+ $ct->{http_method}_{method}({path},{query})
+```
+
+  * **http\_method** HTTP request method _ex: GET_
+  * **method** API Method _ex: trucks_
+  * **path** API request path (optional)
+  * **query** Hash of query parameters (optional)
+
+## Response ##
+After making calls, you'll get back a ClusterTruckResponse object. To retrieve data from the object, request the root node name of the API response. So if I've requested a list of trucks, the root node is "trucks". To get the response:
+```
+ $trucks = $ct->get_trucks()->trucks;
+```
+This will provide a PHP array of the API Response.
+
+For list calls (like trucks, locations, etc) you can also get the total and pages attributes:
+```
+ $trucks = $ct->get_trucks();
+ $trucks->pages; // total number of list pages (total/per)
+ $trucks->total; // total number of items in the list
+```
+
+# Examples #
+All examples assume:
+```
+
+// include ClusterTruck.php client
+include("/path/to/ClusterTruck.php");
+
+// our api information
+$key = "<API_KEY>";
+$secret = "<API_SECRET>";
+$options = array( 'debug' => true);
+
+// create our object
+$ct = new ClusterTruck($key,$secret,$options);
+
+```
+
+## Request a list of trucks ##
+```
+ 
+ // list of trucks
+ $trucks = $ct->get_trucks();
+
+ // dump the response
+ print_r($trucks->trucks);
+
+ // print number of pages
+ echo $trucks->pages;
+
+```
+
+## Request a list of trucks that start with 'k' ##
+```
+ 
+ // list of trucks
+ $trucks = $ct->get_trucks(false,array('name'=>'k*'));
+
+ // dump the response
+ print_r($trucks->trucks);
+
+ // print number of pages
+ echo $trucks->pages;
+
+```
+
+# Changelog #
+  * v1.0.1 [download](http://clusttruck-api.googlecode.com/files/ClusterTruck-1.0.1.zip)
+    * updated to correct signature method
